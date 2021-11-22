@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+// chan 必须初始化，无论是做close信号的chan struct{}还是做消息传递的chan xxx，都需要make。这需要例子来明确。
+
 func produce(p chan<- int) {
 	for i := 0; i < 10; i++ {
 		p <- i
